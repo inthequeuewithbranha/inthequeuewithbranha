@@ -68,16 +68,33 @@
     </section>
 
     <section class="subscribe">
-    <h2>Join the Queue</h2>
+    <div class="subscribe-content">
+       <h2>Join the Queue</h2>
 
     <p>
         No spam. No daily emails. Just a heads-up when new episodes drop and the occasional behind-the-scenes update.
     </p>
 
-    <form class="subscribe-form">
-        <input type="email" placeholder="Enter Your Email">
-        <button type="submit">Join the Queue</button>
+    <form 
+    id="subscribe-form"
+    class="subscribe-form"
+    action="https://app.kit.com/forms/9638474/subscriptions"
+    method="post">
+        <input 
+        id="email"
+        name="email_address"
+        type="email"
+        placeholder="Enter Your Email"
+        required>
+        <input type="hidden" name="ml-submit" value="1">
+        <input type="hidden" name="anticsrf" value="true">
+        <button 
+        id="subscribe-button"
+        type="submit">
+        Join the Queue
+        </button>
     </form>
+    </div>
    <div class="social-links">
     <p>Follow along between episodes.</p>
 
@@ -89,6 +106,7 @@
 </div>
 </section>
 </main>
+<script src="js/main.js"></script>
 </body>
 <footer class="site-footer">
 
