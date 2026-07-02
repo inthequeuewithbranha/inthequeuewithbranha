@@ -25,7 +25,7 @@ subscribeForm.addEventListener("submit", async (event) => {
             <h2>You're in the Queue! 🎉</h2>
 
             <p>
-                 Thanks for subscribing! Be sure to check your spam folder and add us to your contact list!
+                Check your inbox for a welcome email! If you don't see it within a few minutes, check your spam folder and add <strong>branha@inthequeuewithbranha.com</strong> to your contacts so you never miss an episode!
             </p>
         `;
     } catch (error) {
