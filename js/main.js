@@ -1,22 +1,40 @@
 const subscribeForm = document.getElementById("subscribe-form");
 const subscribeContent = document.querySelector(".subscribe-content");
+const emailInput = document.getElementById("email");
 
-subscribeForm.addEventListener("submit", async function (event) {
+subscribeForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const formData = new FormData(subscribeForm);
+    const formBody =
+        "userGroup=&mailingLists=&email=" + encodeURIComponent(emailInput.value);
 
-    await fetch(subscribeForm.action, {
-        method: "POST",
-        body: formData,
-        mode: "no-cors"
-    });
+    try {
+        const response = await fetch(subscribeForm.action, {
+            method: "POST",
+            body: formBody,
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+        });
 
-    subscribeContent.innerHTML = `
-        <h2>You're in the Queue! 🎉</h2>
+        if (!response.ok) {
+            throw new Error("Subscribe request failed");
+        }
 
-        <p>
-            Thanks for subscribing!
-        </p>
-    `;
+        subscribeContent.innerHTML = `
+            <h2>You're in the Queue! 🎉</h2>
+
+            <p>
+                 Thanks for subscribing! Be sure to check your spam folder and add us to your contact list!
+            </p>
+        `;
+    } catch (error) {
+        subscribeContent.innerHTML = `
+            <h2>Oops!</h2>
+
+            <p>
+                The queue seems a little busy at the moment. Please try again in a few minutes! 
+            </p>
+        `;
+    }
 });
