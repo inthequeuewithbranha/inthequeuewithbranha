@@ -1,0 +1,208 @@
+:root {
+    /* Brand Colors */
+    --color-baby-blue: #6E9EDB;
+    --color-light-sky-blue: #A9C8F3;
+    --color-baby-pink: #F5A8BB;
+    --color-soft-blush: #F8D4DE;
+    --color-warm-cream: #FFF9F5;
+    --color-off-white: #FDFDFD;
+    --color-dusty-rose: #E985A5;
+    --color-deep-periwinkle: #4E79B9;
+
+    /* Base Colors */
+    --color-text: #2D3142;
+    --color-muted-text: #5F667A;
+
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+
+    /* Borders + Shadows */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+
+    --shadow-soft: 0 10px 30px rgba(78, 121, 185, 0.15);
+
+    /* Animation */
+    --transition: 0.3s ease;
+
+    /* Typography */
+    --font-heading: "Lobster", cursive;
+    --font-body: "Poppins", sans-serif;
+
+}
+
+body {
+    background-color: var(--color-warm-cream);
+    color: var(--color-text);
+    font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+}
+
+/* Hero */
+.hero-logo {
+    width: 350px;}
+.site-hero {text-align: center;}
+.hero-link {
+    color: var(--color-baby-blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+.hero-link:hover {
+    color: var(--color-deep-periwinkle);
+}
+/* About */
+
+.about {
+    max-width: 700px;
+    margin: 0 auto;
+    padding:
+    var(--space-md)
+    var(--space-lg)
+    var(--space-sm);
+    background-color: var(--color-off-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    margin-top: var(--space-lg);
+}
+
+.about h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.about blockquote {
+    text-align: center;
+}
+
+.about p {
+    text-align: center;
+}
+/* Dividers */
+
+/*section-divider {
+    width: 60%;
+    margin: var(--space-lg) auto var(--space-sm);
+    border: none;
+    border-top: 2px solid var(--color-soft-blush);
+}*/
+
+.section-divider {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: var(--space-md);
+}
+
+.section-divider span {
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-baby-pink);
+    border-radius: 50%;
+}
+.section-divider span:nth-child(2),
+.section-divider span:nth-child(4) {
+    background-color: var(--color-light-sky-blue);
+}
+.about .section-divider:last-child {
+    margin: var(--space-md) 0 var(--space-sm);
+}
+
+.about blockquote {
+    color: var(--color-baby-pink);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Subscribe */
+
+.subscribe {
+    max-width: 600px;
+    margin: var(--space-md) auto var(--space-lg);
+    padding: var(--space-md);
+    text-align: center;
+}
+
+.subscribe p {
+    line-height: 1.7;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    margin-top: var(--space-md);
+}
+
+.subscribe-form input {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--color-soft-blush);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+}
+
+.subscribe-form button {
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: var(--radius-md);
+    background-color: var(--color-baby-blue);
+    color: white;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+}
+.subscribe h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+/* Footer */
+
+.site-footer {
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
+    text-align: center;
+    color: var(--color-muted-text);
+    font-size: 0.9rem;
+}
+
+/* Social Links */
+
+.social-links {
+    margin-top: var(--space-md);
+}
+
+.social-links p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 0.4rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    color: var(--color-baby-blue);
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--color-deep-periwinkle);
+}
+
+.social-links i {
+    font-size: 2rem;
+}
