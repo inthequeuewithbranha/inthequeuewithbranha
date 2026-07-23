@@ -1,20 +1,27 @@
 const subscribeForm = document.getElementById("subscribe-form");
 const subscribeContent = document.querySelector(".subscribe-content");
 const emailInput = document.getElementById("email");
+const subscribeMessage = document.getElementById("subscribe-message");
 
 subscribeForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const formBody =
-        "userGroup=&mailingLists=&email=" + encodeURIComponent(emailInput.value);
+    const formBody = new FormData(subscribeForm);
+const turnstileToken = formBody.get("cf-turnstile-response");
+
+if (!turnstileToken) {
+    subscribeMessage.textContent =
+        "Only humans can joining the queue!";
+
+    return;
+}
+
+subscribeMessage.textContent = "";
 
     try {
         const response = await fetch(subscribeForm.action, {
             method: "POST",
             body: formBody,
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
         });
 
         if (!response.ok) {
@@ -29,6 +36,9 @@ subscribeForm.addEventListener("submit", async (event) => {
             </p>
         `;
     } catch (error) {
+        if (window.turnstile) {
+    window.turnstile.reset();
+}
         subscribeContent.innerHTML = `
             <h2>Oops!</h2>
 
