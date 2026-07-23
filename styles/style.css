@@ -147,8 +147,10 @@ h3 {
 
 .subscribe-fields {
     display: flex;
+    flex-direction: row;
     gap: 1.25rem;
     justify-content: center;
+    align-items: stretch;
 }
 
 .subscribe-form input {
